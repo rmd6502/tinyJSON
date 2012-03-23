@@ -125,7 +125,7 @@
   }
 
   NSString *firstChar = [data substringWithRange:r];
-  NSLog(@"currentRange %@ r %@ char %@", NSStringFromRange(currentRange), NSStringFromRange(r), firstChar);
+//  NSLog(@"currentRange %@ r %@ char %@", NSStringFromRange(currentRange), NSStringFromRange(r), firstChar);
   ADVANCE(r);
   if ([firstChar isEqualToString:@"{"]) {
     return [self parseDictionary];
