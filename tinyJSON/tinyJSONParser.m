@@ -69,6 +69,14 @@
 - (NSArray *)parseArray {
   NSMutableArray *ret = [NSMutableArray array];
   
+  while (YES) {
+    id val = [self parseValue];
+    [ret addObject:val];
+    NSRange first = [data rangeOfCharacterFromSet:begins options:0 range:currentRange];
+    NSString *firstChar = [data substringWithRange:first];
+    if ([firstChar isEqualToString:@"]"]) return ret;
+    else if (![firstChar isEqualToString:@","]) return nil;
+  }
   return ret;
 }
 
