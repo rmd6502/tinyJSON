@@ -10,6 +10,7 @@
 		835AED79151BF50E00AF777D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835AED78151BF50E00AF777D /* Foundation.framework */; };
 		835AED7C151BF50E00AF777D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 835AED7B151BF50E00AF777D /* main.m */; };
 		835AED80151BF50E00AF777D /* tinyJSON.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 835AED7F151BF50E00AF777D /* tinyJSON.1 */; };
+		835AED88151BF52B00AF777D /* tinyJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 835AED87151BF52B00AF777D /* tinyJSONParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +30,10 @@
 		835AED74151BF50E00AF777D /* tinyJSON */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tinyJSON; sourceTree = BUILT_PRODUCTS_DIR; };
 		835AED78151BF50E00AF777D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		835AED7B151BF50E00AF777D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		835AED7E151BF50E00AF777D /* tinyJSON-Prefix.pch */ = {isa = PBXFileReference; path = "tinyJSON-Prefix.pch"; sourceTree = "<group>"; };
+		835AED7E151BF50E00AF777D /* tinyJSON-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tinyJSON-Prefix.pch"; sourceTree = "<group>"; };
 		835AED7F151BF50E00AF777D /* tinyJSON.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = tinyJSON.1; sourceTree = "<group>"; };
+		835AED86151BF52B00AF777D /* tinyJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyJSONParser.h; sourceTree = "<group>"; };
+		835AED87151BF52B00AF777D /* tinyJSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tinyJSONParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,8 @@
 				835AED7B151BF50E00AF777D /* main.m */,
 				835AED7F151BF50E00AF777D /* tinyJSON.1 */,
 				835AED7D151BF50E00AF777D /* Supporting Files */,
+				835AED86151BF52B00AF777D /* tinyJSONParser.h */,
+				835AED87151BF52B00AF777D /* tinyJSONParser.m */,
 			);
 			path = tinyJSON;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				835AED7C151BF50E00AF777D /* main.m in Sources */,
+				835AED88151BF52B00AF777D /* tinyJSONParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
