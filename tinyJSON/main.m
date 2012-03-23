@@ -7,15 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "tinyJSONParser.h"
 
 int main(int argc, const char * argv[])
 {
 
   @autoreleasepool {
-      
-      // insert code here...
-      NSLog(@"Hello, World!");
-      
+    NSString *testString = @"{ \"a\": \"bcd\", \"qrs\" : 75 }";
+    tinyJSONParser *jp = [[tinyJSONParser alloc] init];
+    NSLog(@"basic test: \n%@\n%@", testString, [jp parse:testString]);
+    testString = @"[\"string 1\", 45, 67, [ 1, 2, 3 ], { \"tt\" : \"uu\" } ]";  
+    NSLog(@"more complex test: \n%@\n%@", testString, [jp parse:testString]);
   }
     return 0;
 }

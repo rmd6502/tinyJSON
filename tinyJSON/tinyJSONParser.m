@@ -9,8 +9,8 @@
 #import "tinyJSONParser.h"
 
 #define ADVANCE(next) \
-  currentRange.length -= (next.location - currentRange.location) + 1; \
-  currentRange.location = next.location + 1
+  currentRange.length -= (next.location - currentRange.location) + next.length; \
+  currentRange.location = next.location + next.length
 
 @interface tinyJSONParser(Private)
 - (NSDictionary *)parseDictionary;
@@ -53,8 +53,8 @@
     first = [data rangeOfCharacterFromSet:begins options:0 range:currentRange];
     if (first.location == NSNotFound) break;
     NSString *firstChar = [data substringWithRange:first];
-    if ([firstChar isEqualToString:@"}"]) return ret;
-    if ([firstChar isEqualToString:@","]) continue;
+    if ([firstChar isEqualToString:@"}"]) { ADVANCE(first); return ret; }
+    if ([firstChar isEqualToString:@","]) { ADVANCE(first); continue; }
     NSString *key = [self parseString];
     if (key == nil) return nil;
     NSRange next = [data rangeOfCharacterFromSet:begins options:0 range:currentRange];
@@ -71,9 +71,11 @@
   
   while (YES) {
     id val = [self parseValue];
+    if (val == nil) return nil;
     [ret addObject:val];
     NSRange first = [data rangeOfCharacterFromSet:begins options:0 range:currentRange];
     NSString *firstChar = [data substringWithRange:first];
+    ADVANCE(first);
     if ([firstChar isEqualToString:@"]"]) return ret;
     else if (![firstChar isEqualToString:@","]) return nil;
   }
@@ -85,10 +87,10 @@
   NSString *firstChar = [data substringWithRange:first];
   if (![firstChar isEqualToString:@"\""]) return nil;
   ADVANCE(first);
-  NSRange next = [data rangeOfString:@"(?!\\)\"" options:NSRegularExpressionSearch range:currentRange];
+  NSRange next = [data rangeOfString:@"\"" options:NSRegularExpressionSearch range:currentRange];
   if (next.location == NSNotFound) return nil;
   ADVANCE(next);
-  return [data substringWithRange:NSMakeRange(first.location + 1, next.location - first.location)];
+  return [data substringWithRange:NSMakeRange(first.location + 1, next.location - first.location - 1)];
 }
 
 - (NSNumber *)parseNumber {
@@ -109,16 +111,19 @@
   if (r.location == NSNotFound) {
     return nil;
   }
-  currentRange.length -= (r.location - currentRange.location);
-  currentRange.location = r.location;
+  ADVANCE(r);
   NSString *firstChar = [data substringWithRange:r];
   if ([firstChar isEqualToString:@"{"]) {
     return [self parseDictionary];
   } else if ([firstChar isEqualToString:@"["]) {
     return [self parseArray];
   } else if ([firstChar isEqualToString:@"\""]) {
+    --currentRange.location;
+    ++currentRange.length;
     return [self parseString];
   } else if ([firstChar rangeOfCharacterFromSet:numberChars].location != NSNotFound) {
+    --currentRange.location;
+    ++currentRange.length;
     return [self parseNumber];
   }
   
