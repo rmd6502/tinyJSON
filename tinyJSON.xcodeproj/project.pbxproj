@@ -1,0 +1,235 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		835AED79151BF50E00AF777D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835AED78151BF50E00AF777D /* Foundation.framework */; };
+		835AED7C151BF50E00AF777D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 835AED7B151BF50E00AF777D /* main.m */; };
+		835AED80151BF50E00AF777D /* tinyJSON.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 835AED7F151BF50E00AF777D /* tinyJSON.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		835AED72151BF50E00AF777D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				835AED80151BF50E00AF777D /* tinyJSON.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		835AED74151BF50E00AF777D /* tinyJSON */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tinyJSON; sourceTree = BUILT_PRODUCTS_DIR; };
+		835AED78151BF50E00AF777D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		835AED7B151BF50E00AF777D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		835AED7E151BF50E00AF777D /* tinyJSON-Prefix.pch */ = {isa = PBXFileReference; path = "tinyJSON-Prefix.pch"; sourceTree = "<group>"; };
+		835AED7F151BF50E00AF777D /* tinyJSON.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = tinyJSON.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		835AED71151BF50E00AF777D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				835AED79151BF50E00AF777D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		835AED69151BF50D00AF777D = {
+			isa = PBXGroup;
+			children = (
+				835AED7A151BF50E00AF777D /* tinyJSON */,
+				835AED77151BF50E00AF777D /* Frameworks */,
+				835AED75151BF50E00AF777D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		835AED75151BF50E00AF777D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				835AED74151BF50E00AF777D /* tinyJSON */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		835AED77151BF50E00AF777D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				835AED78151BF50E00AF777D /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		835AED7A151BF50E00AF777D /* tinyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				835AED7B151BF50E00AF777D /* main.m */,
+				835AED7F151BF50E00AF777D /* tinyJSON.1 */,
+				835AED7D151BF50E00AF777D /* Supporting Files */,
+			);
+			path = tinyJSON;
+			sourceTree = "<group>";
+		};
+		835AED7D151BF50E00AF777D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				835AED7E151BF50E00AF777D /* tinyJSON-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		835AED73151BF50E00AF777D /* tinyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 835AED83151BF50E00AF777D /* Build configuration list for PBXNativeTarget "tinyJSON" */;
+			buildPhases = (
+				835AED70151BF50E00AF777D /* Sources */,
+				835AED71151BF50E00AF777D /* Frameworks */,
+				835AED72151BF50E00AF777D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tinyJSON;
+			productName = tinyJSON;
+			productReference = 835AED74151BF50E00AF777D /* tinyJSON */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		835AED6B151BF50D00AF777D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "America Online";
+			};
+			buildConfigurationList = 835AED6E151BF50D00AF777D /* Build configuration list for PBXProject "tinyJSON" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 835AED69151BF50D00AF777D;
+			productRefGroup = 835AED75151BF50E00AF777D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				835AED73151BF50E00AF777D /* tinyJSON */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		835AED70151BF50E00AF777D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				835AED7C151BF50E00AF777D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		835AED81151BF50E00AF777D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		835AED82151BF50E00AF777D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		835AED84151BF50E00AF777D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "tinyJSON/tinyJSON-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		835AED85151BF50E00AF777D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "tinyJSON/tinyJSON-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		835AED6E151BF50D00AF777D /* Build configuration list for PBXProject "tinyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				835AED81151BF50E00AF777D /* Debug */,
+				835AED82151BF50E00AF777D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		835AED83151BF50E00AF777D /* Build configuration list for PBXNativeTarget "tinyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				835AED84151BF50E00AF777D /* Debug */,
+				835AED85151BF50E00AF777D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 835AED6B151BF50D00AF777D /* Project object */;
+}
