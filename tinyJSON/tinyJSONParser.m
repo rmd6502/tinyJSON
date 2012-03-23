@@ -17,6 +17,7 @@
 - (NSArray *)parseArray;
 - (NSString *)parseString;
 - (NSNumber *)parseNumber;
+- (NSNumber *)parseBoolean;
 - (id)parseValue;
 @end
 
@@ -106,24 +107,38 @@
   return [NSNumber numberWithDouble:[num doubleValue]];
 }
 
+- (NSNumber *)parseBoolean {
+  NSRange next = [data rangeOfCharacterFromSet:[[NSCharacterSet letterCharacterSet] invertedSet] options:0 range:currentRange];
+  NSString *val = [[data substringWithRange:NSMakeRange(currentRange.location, next.location - currentRange.location)] lowercaseString];
+  ADVANCE(next);
+  --currentRange.location; ++currentRange.length;
+  if ([val isEqualToString:@"t"] || [val isEqualToString:@"true"]) {
+    return [NSNumber numberWithBool:YES];
+  }
+  return [NSNumber numberWithBool:NO];
+}
+
 - (id)parseValue {
   NSRange r = [data rangeOfCharacterFromSet:begins options:0 range:currentRange];
   if (r.location == NSNotFound) {
     return nil;
   }
-  ADVANCE(r);
+
   NSString *firstChar = [data substringWithRange:r];
+  NSLog(@"currentRange %@ r %@ char %@", NSStringFromRange(currentRange), NSStringFromRange(r), firstChar);
+  ADVANCE(r);
   if ([firstChar isEqualToString:@"{"]) {
     return [self parseDictionary];
   } else if ([firstChar isEqualToString:@"["]) {
     return [self parseArray];
   } else if ([firstChar isEqualToString:@"\""]) {
-    --currentRange.location;
-    ++currentRange.length;
+    --currentRange.location; ++currentRange.length;
     return [self parseString];
+  } else if ([@"tTfF" rangeOfString:firstChar].location != NSNotFound) {
+    --currentRange.location; ++currentRange.length;
+    return [self parseBoolean];
   } else if ([firstChar rangeOfCharacterFromSet:numberChars].location != NSNotFound) {
-    --currentRange.location;
-    ++currentRange.length;
+    --currentRange.location; ++currentRange.length;
     return [self parseNumber];
   }
   
